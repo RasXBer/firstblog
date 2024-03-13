@@ -1,13 +1,11 @@
 ## User Story
 
-
 AS A marketing student,
 I WANT a personal blog
 SO THAT I can showcase my thoughts and experiences.
 
 
 ## Acceptance Criteria
-
 
 GIVEN a personal blog
 WHEN I load the app,
@@ -34,3 +32,5 @@ WHEN I view the footer,
 THEN I am presented with a link to the developer's portfolio.
 
 # firstblog
+
+☀️ dark mode switch button added on both pages

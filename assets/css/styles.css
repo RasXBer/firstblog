@@ -1,0 +1,97 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    padding: 40px;
+ }
+
+ header {
+    text-align: center; /* Center the text within the header */
+    position: relative; /* Positioning context for pseudo-elements */
+    height: 1px;
+    width: 100%;
+}
+
+ header::after {
+    content: "";
+    position: absolute;
+    bottom: -4px; /* Adjust this value to control the distance of the double line from the text */
+    left: 0;
+    width: 100%;
+    border-bottom: 6px double black; /* First line */
+}
+
+.container {
+    display: flex;
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.vertical-line {
+    border-left: 6px double black;
+    height: 300vh /* Adjust height as needed */
+}
+
+.header-circle {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+/* .container {
+    margin: 50px auto;
+    width: 50%;
+    text-align: center;
+}  */
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    display: block;
+    width: 600px;
+}
+
+input[type="userName"],
+input[type="title"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box 100px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+} 

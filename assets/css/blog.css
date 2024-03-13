@@ -1,17 +1,62 @@
-.container {
-    margin: 50px auto;
-    width: 80%;
-    text-align: center;
+header {
+    padding: 40px;
+}
+
+header {
+    text-align: left;
+    /* Center the text within the header */
+    position: relative;
+    /* Positioning context for pseudo-elements */
+    height: 20px;
+    width: 100%;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    /* Adjust this value to control the distance of the double line from the text */
+    left: 0;
+    width: 100%;
+    border-bottom: 6px double black;
 }
 
 h1 {
     margin-bottom: 20px;
 }
 
-.blog-post {
+footer {
+    padding: 40px;
+    border-top: 6px double black;
+    width: 100%;
+    margin: 0;
+    padding-left: 0%;
+}
+
+.container {
+    margin: 50px auto;
+    width: 100%;
+    text-align: left;
+    flex-wrap: wrap;
+    /* border-color: black; 
+    border: 1px solid #110f0f;  */
+}
+
+.blogPostsContainer {
+    margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+}
+
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
 }

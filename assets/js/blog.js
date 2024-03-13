@@ -1,60 +1,57 @@
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Retrieve data from local storage
-    var userData = JSON.parse(localStorage.getItem("userData"));
+    var userData = JSON.parse(localStorage.getItem("myForm"));
+    const blogPostsContainer = document.getElementById('blogPostsContainer'); // Ensure this targets the correct container
 
-    // Log local storage data
-    console.log("User Name:", userData.name);
-    console.log("Title:", userData.email);
+
+    for (let i = 0; i < userData.length; i++) {
+
+        // Log local storage data
+        console.log("User Name:", userData[i].userName);
+        console.log("Title:", userData[i].title);
+        console.log("Content:", userData[i].content);
+        // Log local storage data on My First Blog page
+        const blogPostsContainer = document.getElementById('blogPosts');
+        const userInfo = document.createElement('div')
+        const titleInfo = document.createElement('h2')
+        const contentInfo = document.createElement('div')
+        //    userInfo.textContent=userData[i].userName;
+        userInfo.textContent = `Posted by:${userData[i].userName}`;
+        titleInfo.textContent = userData[i].title;
+        contentInfo.textContent = userData[i].content;
+
+        blogPostsContainer.appendChild(titleInfo);
+        blogPostsContainer.appendChild(contentInfo);
+        blogPostsContainer.appendChild(userInfo);
+
+    }
 });
 
+document.querySelector("#backbtn").addEventListener("click", function () {
+    document.location.replace("index.html")
+})
 
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     // Retrieve data from local storage
-//     var savedPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+// Function to create and populate the footer 
+function populateFooter() {
+    // Footer element
+    const footer = document.getElementById("myFooter");
 
-//     // Display saved posts
-//     var blogPostsContainer = document.getElementById("blogPosts");
-//     savedPosts.forEach(function(post) {
-//         var postElement = document.createElement("div");
-//         postElement.classList.add("blog-post");
-//         postElement.innerHTML = "<h2>" + post.title + "</h2><p>" + post.content + "</p>";
-//         blogPostsContainer.appendChild(postElement);
-//     });
-// });
+    const blogName = document.createElement("p");
+    blogName.textContent = "my-first-blog";
 
-// // Function to handle form submission
-// function savePost() {
-//     var userName = document.getElementById("userName").value;
-//     var title = document.getElementById("title").value;
-//     var content = document.getElementById("content").value;
+    const email = document.createElement("p");
+    email.textContent = "rb@gmail.com";
 
-//     // Create a new post object
-//     var post = {
-//         userName:userName,
-//         title: title,
-//         content: content
-//     };
+    // Append items to the footer
+    footer.appendChild(blogName);
+    footer.appendChild(email);
+}
 
-//     // Retrieve existing posts from local storage
-//     var savedPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
-
-//     // Add the new post to the array
-//     savedPosts.push(post);
-
-//     // Save the updated array back to local storage
-//     localStorage.setItem("blogPosts", JSON.stringify(savedPosts));
-
-//     // Clear the form fields
-//     document.getElementById("userName").value = "";
-//     document.getElementById("title").value = "";
-//     document.getElementById("content").value = "";
-
-//     // Display the new post
-//     var blogPostsContainer = document.getElementById("blogPosts");
-//     var postElement = document.createElement("div");
-//     postElement.classList.add("blog-post");
-//     postElement.innerHTML = "<h2>" + post.title + "</h2><p>" + post.content + "</p>";
-//     blogPostsContainer.appendChild(postElement);
-// }
+// Call the function to populate the footer
+populateFooter();

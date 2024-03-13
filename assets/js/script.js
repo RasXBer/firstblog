@@ -1,18 +1,9 @@
 // document.getElementById("myForm").addEventListener("submit", function(event){
-//     event.preventDefault(); // Prevent the form from submitting
 
-//     // Retrieve form data
-//     var formData = new FormData(this);
-
-//     // Display form data
-//     for (var pair of formData.entries()) {
-//         console.log(pair[0] + ': ' + pair[1]);
-//     }
-// });
-
+var blogList = JSON.parse(localStorage.getItem("myForm")) || []
 const form = document.getElementById('myForm');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form submission
 
     // Get form data
@@ -26,10 +17,19 @@ form.addEventListener('submit', function(event) {
         title: title,
         content: content
     };
-
+    blogList.push(myBlog)
     // Store object in localStorage
-    localStorage.setItem('myBlog', JSON.stringify(myBlog));
+    localStorage.setItem('myForm', JSON.stringify(blogList));
 
     // Optionally, you can redirect the user to another page
     window.location.href = 'blog.html';
 });
+
+document.getElementById('userName').value = '';
+document.getElementById('title').value = '';
+document.getElementById('content').value = '';
+
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}

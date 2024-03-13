@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog</title>
-<link rel="blogposts" href="./assets/css/blog.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./assets/css/blog.css">
 </head>
+
 <body>
     <header>
-        <h1></h1>
+        <h1>My First Blog</h1>
+        <button id="backbtn">Back</button>
+        <button onclick="myFunction()">☀️</button>
     </header>
-<div class="container">
-    <h1>My First Blog</h1>
-    <div id="blogPosts">
-        <!-- Blog posts will be displayed here -->
+    <div class="container">
+        <div id="blogPosts">
+            <div id="blogPostsContainer"></div>
+        </div>
     </div>
-</div>
-
-<script src="./assets/js/blog.js"></script>
+    <footer id="myFooter">
+        <!-- Function to create and populate the footer -->
+    </footer>
+    <script src="./assets/js/blog.js"></script>
 </body>
+
 </html>

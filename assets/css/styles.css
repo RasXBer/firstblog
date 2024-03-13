@@ -4,56 +4,79 @@
 } */
 
 body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
     margin: 0;
     padding: 0;
-    
+    /* overflow-x: hidden; */
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
 }
 
 header {
     padding: 40px;
- }
+}
 
- header {
-    text-align: center; /* Center the text within the header */
-    position: relative; /* Positioning context for pseudo-elements */
-    height: 1px;
+header {
+    text-align: right;
+    /* Center the text within the header */
+    position: relative;
+    /* Positioning context for pseudo-elements */
+    height: 50px;
     width: 100%;
 }
 
- header::after {
+header::after {
     content: "";
     position: absolute;
-    bottom: -4px; /* Adjust this value to control the distance of the double line from the text */
+    bottom: -4px;
+    /* Adjust this value to control the distance of the double line from the text */
     left: 0;
     width: 100%;
-    border-bottom: 6px double black; /* First line */
+    border-bottom: 6px double black;
+    /* First line */
+}
+
+header button {
+    position: relative;
+    right: 200px;
 }
 
 .container {
     display: flex;
 }
 
-.left-section, .right-section {
+.left-section,
+.right-section {
     flex: 1;
     padding: 20px;
 }
 
 .vertical-line {
     border-left: 6px double black;
-    height: 300vh /* Adjust height as needed */
+    height: 85vh
+        /* Adjust height as needed */
 }
 
 .header-circle {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
-    background-color: #3498db;
+    /* background-color: #3498db; */
+    background: linear-gradient(to top,  rgb(73, 50, 7), yellow);
+        animation: fadeColors 5s infinite;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
-    margin-right: 20px;
+    font-family: Arial, Helvetica, sans-serif; font-weight: 400;
+    font-size: 2em;
+    margin-left: 80px;
 }
 
 /* .container {
@@ -70,6 +93,7 @@ form {
 label {
     display: block;
     width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input[type="userName"],
@@ -81,17 +105,19 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box 100px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input[type="submit"] {
+    width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-} 
+}
 
 input[type="submit"]:hover {
     background-color: #45a049;
-} 
+}
